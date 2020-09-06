@@ -57,7 +57,7 @@ func (s *ServerPool) GetNextPeer() *Backend {
 		for idx >= s.backends[serverIdx].prefixWeight {
 			serverIdx += 1
 			if int(serverIdx) >= len(s.backends) {
-				panic("serverIdx is larger than number of backends")
+				log.Fatalln("serverIdx is larger than number of backends")
 			}
 		}
 
